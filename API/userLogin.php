@@ -5,7 +5,7 @@ class user
 
     function __construct()
     {
-    	$con=mysqli_connect("localhost","root","","ourselfie") or die("server error!");
+    	$con=mysqli_connect("localhost","root","Myselfie@196#","ourselfie") or die("server error!");
         $this->con=$con;
     }
 
