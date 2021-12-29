@@ -33,7 +33,7 @@
           <tr>
             <td>
             <h2>Login here</h2>
-            <a href="Login.php">
+            <a href="login.php">
 	         <input type="button" value="Log in" style="background-color: skyblue; border-radius: 100px; color: #fff; cursor: pointer; font-size: 20px; font-weight: bold; line-height: 20px; padding: 15px 100px;">
             </a>
 

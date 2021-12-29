@@ -271,14 +271,14 @@ include 'hide navbar.php';
                 success:function(data)
                 {
                     
-                    for(var index=0; index<=1; index++)
-                    {
+                    // for(var index=0; index<=1; index++)
+                    // {
 
-                        if(data[index].liked == 'raj')
-                        {
-                            $("#raj").attr("src","red_heart.svg");
-                        }
-                    }
+                    //     if(data[index].liked == 'raj')
+                    //     {
+                    //         $("#raj").attr("src","red_heart.svg");
+                    //     }
+                    // }
                 },
                 complete:function(data)
                 {
