@@ -17,6 +17,7 @@ body {
   width: 100%;
   display: block;
   transition: top 0.3s;
+  z-index: 1;
 }
 
 #navbar a {

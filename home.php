@@ -171,7 +171,7 @@ include 'hide navbar.php';
                 fbURL = 'http://www.facebook.com/sharer.php?u='+url1+'';
                $(this).attr("href", fbURL);
             });
-
+            
  // -----------------------------------for showing comment-------------------------------------
             $(".comment").on("click", function() {
 
@@ -214,8 +214,12 @@ include 'hide navbar.php';
                 var i=$(this).children(".like_icon").attr("src");
                 
                 if(i=="heart.svg"){
+                    var cont=(parseInt($(this).children("span").html())+1)
+                        $(this).children("span").html(cont)
                     $(this).children(".like_icon").attr("src","red_heart.svg");
                 }else if(i=="red_heart.svg"){
+                    var cont=(parseInt($(this).children("span").html())-1)
+                        $(this).children("span").html(cont)
                     $(this).children(".like_icon").attr("src","heart.svg");
                 }
 
@@ -226,8 +230,7 @@ include 'hide navbar.php';
           });
 
             
-           setTimeout(show,1000);
-         
+           show()
      
          });
 // ===================complite ready function=======================================
@@ -248,7 +251,7 @@ include 'hide navbar.php';
                 },
                 complete:function(data)
                 {
-                    setTimeout(show,1000);
+                    setTimeout(show,10000);
                 }
                     
             }); 
@@ -258,7 +261,7 @@ include 'hide navbar.php';
 
 
 // -----------------------------append like----------------------------------------
-        var userId = '<?php echo $USER; ?>';
+        const userId = '<?php echo $USER; ?>';
 
 
         function showLike()
@@ -271,22 +274,23 @@ include 'hide navbar.php';
                 success:function(data)
                 {
                     
-                    // for(var index=0; index<=1; index++)
-                    // {
+                    for(var index=0; index<data.length; index++)
+                    {
 
-                    //     if(data[index].liked == 'raj')
-                    //     {
-                    //         $("#raj").attr("src","red_heart.svg");
-                    //     }
-                    // }
+                        if(data[index].liker == userId)
+                        {
+                            $("#"+data[index]['liked']).attr("src","red_heart.svg");
+                        }
+                    }
                 },
                 complete:function(data)
                 {
-                    setTimeout(showLike,1000);
+                    // setTimeout(showLike,10000);
                 }
                     
             });
         }
-        setTimeout(showLike,1000);
+        showLike()
+        // setTimeout(showLike,1000);
       </script>
 </html>
