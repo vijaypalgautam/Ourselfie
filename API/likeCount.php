@@ -1,10 +1,9 @@
 <?php
+include 'config.php';
 header('Access-Control-Allow-Origin: *');
 
-$con = mysqli_connect("localhost","root","","ourselfie") or die("server error!");
-
 $query = "SELECT count, sNo FROM user ";
-$result = mysqli_query($con, $query);
+$result = mysqli_query($conn, $query);
 $total=(int) mysqli_num_rows($result);
 
 while ($row=mysqli_fetch_assoc($result)) 
